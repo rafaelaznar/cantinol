@@ -38,27 +38,49 @@
             <div class="col-4">
                 <form name="dimensionesForm" class="mt-4">
                     <div class="form-group form-row">
-                        <label for="txtAnchura">Anchura</label>
+                        <label for="txtAnchura">Anchura</label><br>
+                        <!--
+                        pristine: {{dimensionesForm.txtAnchura.$pristine}}<br>                        
+                        DIRTY: {{dimensionesForm.txtAnchura.$dirty}}<br>
+                        TOUCHED: {{dimensionesForm.txtAnchura.$touched}}<br>                        
+                        unTOUCHED: {{dimensionesForm.txtAnchura.$untouched}}<br>
+                        valid: {{dimensionesForm.txtAnchura.$valid}}<br>
+                        invalid: {{dimensionesForm.txtAnchura.$invalid}}<br>
+                        -->
                         <input name="txtAnchura" type="text" class="form-control"
                             ng-class="{ 'is-valid' : dimensionesForm.txtAnchura.$valid && dimensionesForm.txtAnchura.$dirty , 'is-invalid' : dimensionesForm.txtAnchura.$invalid && dimensionesForm.txtAnchura.$dirty}"
                             id="txtAnchura" ng-pattern="/^[1-9]|[1-9][0-9]$/" ng-model="anchura" ng-minlength="1"
                             ng-maxlength="2" required />
-                        <div class="valid-feedback">Anchura correcta</div>
+                        <div ng-show="dimensionesForm.txtAnchura.$valid" class="valid-feedback">Anchura correcta</div>
                         <div ng-show="dimensionesForm.txtAnchura.$invalid" class="invalid-feedback">
                             Por favor introduce un numero de 1 a 99.
                         </div>
                     </div>
                     <div class="form-group form-row">
-                        <label for="txtAltura">Altura</label>
+                        <label for="txtAltura">Altura</label><br>  
+                        <!--
+                        pristine: {{dimensionesForm.txtAltura.$pristine}}<br>                        
+                        DIRTY: {{dimensionesForm.txtAltura.$dirty}}<br>
+                        TOUCHED: {{dimensionesForm.txtAltura.$touched}}<br>                        
+                        unTOUCHED: {{dimensionesForm.txtAltura.$untouched}}<br>
+                        valid: {{dimensionesForm.txtAltura.$valid}}<br>
+                        invalid: {{dimensionesForm.txtAltura.$invalid}}<br>
+                        -->
                         <input name="txtAltura" type="text" class="form-control"
-                            ng-class="{ 'is-valid' : dimensionesForm.txtAltura.$valid && dimensionesForm.txtAnchura.$dirty , 'is-invalid' : dimensionesForm.txtAltura.$invalid && dimensionesForm.txtAltura.$dirty}"
+                            ng-class="{ 'is-valid' : dimensionesForm.txtAltura.$valid && dimensionesForm.txtAltura.$dirty , 'is-invalid' : dimensionesForm.txtAltura.$invalid && dimensionesForm.txtAltura.$dirty}"
                             id="txtAltura" ng-pattern="/^[1-9]|[1-9][0-9]$/" ng-model="altura" ng-minlength="1"
                             ng-maxlength="2" required />
-                        <div class="valid-feedback">Altura correcta!</div>
+                        <div ng-show="dimensionesForm.txtAltura.$valid" class="valid-feedback">Altura correcta!</div>
                         <div ng-show="dimensionesForm.txtAltura.$invalid" class="invalid-feedback">
                             Por favor introduce un numero de 1 a 99.
                         </div>
                     </div>
+                    <!--
+                        pristine: {{dimensionesForm.$pristine}}<br>                        
+                        DIRTY: {{dimensionesForm.$dirty}}<br>
+                        valid: {{dimensionesForm.$valid}}<br>
+                        invalid: {{dimensionesForm.$invalid}}<br>
+                    -->
                 </form>
                 <button class="btn btn-success mt-4 mx-2" ng-click="generaTabla()"
                     ng-disabled="dimensionesForm.$invalid || arrayAlturaIterator.length||arrayAnchuraIterator.length">Generar
